@@ -1,14 +1,57 @@
-# Použité datasety
+# Datasety použité v experimentoch
 
-V tejto práci boli použité nasledovné datasety:
+Tento priečinok obsahuje predspracované datasety použité pri trénovaní a testovaní jazykových modelov v rámci bakalárskej práce. Všetky súbory sú vo formáte `.csv`.
 
-- [civil_comments](https://huggingface.co/datasets/civil_comments)  
-  → anotované komentáre v angličtine (toxické a netoxické)
+## 1. Slovenské a anglické komentáre – binárna klasifikácia
 
-- [TUKE-KEMT/hate_speech_slovak](https://huggingface.co/datasets/TUKE-KEMT/hate_speech_slovak)  
-  → ručne anotované slovenské komentáre (toxické a nenávistné)
+- `train_civil.csv`  
+  Trénovacia množina pre model ToxicBERT na anglických dátach z datasetu `civil_comments`.
 
-- [FredZhang7/toxi-text-3M](https://huggingface.co/datasets/FredZhang7/toxi-text-3M)  
-  → viacjazyčný dataset s komentármi v rôznych jazykoch (vrátane SK a EN)
+- `val_civil.csv`  
+  Validačná množina pre anglické komentáre.
 
-Dáta nie sú súčasťou tohto repozitára z dôvodu veľkosti a licencií.
+- `test_civil.csv`  
+  Testovacia množina na overenie výkonu modelu po trénovaní.
+
+- `train_multilingual.csv`  
+  Kombinovaný dataset (SK + EN) pre multilingválny model XLM-RoBERTa.
+
+- `val_multilingual.csv`  
+  Validačná časť kombinovaného datasetu.
+
+- `test_multilingual.csv`  
+  Testovacia množina pre multilingválne modely.
+
+## 2. Multilabel klasifikácia toxicity
+
+- `train_multilabel_small(1).csv`  
+  Zmenšená trénovacia množina pre multilabel klasifikáciu (ToxicBERT), odvodená z datasetu `civil_comments`.
+
+- `test_multilabel_small(1).csv`  
+  Testovacia množina pre multilabel klasifikáciu.
+
+- `valid_multilabel_small.csv`  
+  Validačná množina pre multilabel klasifikáciu.
+
+## 3. Hodnotenie pomocou ChatGPT
+
+- `chatgpt_eval_1000_slovak.csv`  
+  Dataset so 1000 slovenskými komentármi, ktoré boli hodnotené modelom ChatGPT (zero-shot a few-shot).
+
+## 4. Experimenty s ChatGPT – testovacie vstupy
+
+- `sentiment_results_test_1000.csv`  
+  Dataset testovaných komentárov pre zero-shot experiment (obsahuje už aj predikcie – súčasťou výstupov, ale ponechaný pre konzistenciu).
+
+- `sentiment_results_test_1000_fewshot.csv`  
+  Testovacie komentáre s predikciami z few-shot promptov.
+
+## Poznámka
+
+Niektoré súbory môžu obsahovať aj výstupy (napr. predikcie modelu ChatGPT). V prípade, že boli použité iba na hodnotenie, sú ponechané v tomto priečinku kvôli prehľadnosti a spätnej reprodukovateľnosti experimentov.
+
+## Pôvodné zdroje dát
+
+- https://huggingface.co/datasets/civil_comments  
+- https://huggingface.co/datasets/TUKE-KEMT/hate_speech_slovak  
+- https://huggingface.co/datasets/FredZhang7/toxi-text-3M
