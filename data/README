@@ -1,0 +1,14 @@
+# Použité datasety
+
+V tejto práci boli použité nasledovné datasety:
+
+- [civil_comments](https://huggingface.co/datasets/civil_comments)  
+  → anotované komentáre v angličtine (toxické a netoxické)
+
+- [TUKE-KEMT/hate_speech_slovak](https://huggingface.co/datasets/TUKE-KEMT/hate_speech_slovak)  
+  → ručne anotované slovenské komentáre (toxické a nenávistné)
+
+- [FredZhang7/toxi-text-3M](https://huggingface.co/datasets/FredZhang7/toxi-text-3M)  
+  → viacjazyčný dataset s komentármi v rôznych jazykoch (vrátane SK a EN)
+
+Dáta nie sú súčasťou tohto repozitára z dôvodu veľkosti a licencií.
